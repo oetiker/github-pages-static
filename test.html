@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #world {
+            transition: background-color 1s;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', e => {
+            console.log(e);
+            let el = document.querySelector("#world");
+            el.style.backgroundColor='#'+Math.floor(Math.random()*16777215).toString(16);	
+            let bt = document.querySelector("#btn");
+            bt.addEventListener('click', e => {
+                el.style.backgroundColor='#'+Math.floor(Math.random()*16777215).toString(16);	
+            })
+            setInterval(() => {
+                el.style.backgroundColor='#'+Math.floor(Math.random()*16777215).toString(16);	 
+            },1000);
+         });     
+
+    </script>
+</head>
+<body>
+    <div id="world">Hello World</div>
+    <button id="btn">Recolor</button>
+</body>
+</html>
